@@ -1,0 +1,139 @@
+Linux shell Commands
+shell -> user interface for running commands
+Bash -> born again shell
+shells-> bash,sh,ksh(korn shell),zsh,tcsh,fish etc
+
+-r --> means ascending or reverse in case of ls 
+-d --> for permision
+Permission	symbol
+read		r
+write		w
+execute		x
+
+
+##
+To get default shell
+-> printenv SHELL
+
+to mode to bash
+-> bash
+
+##shell command applications
+--> getting information
+--> navigating and working with files and directories
+--> printing file and string contents
+--> compression and archiving
+--> performing network operations
+--> monitoring performance and status
+--> running batch jobs
+
+## basic shell commands
+-> whoami --> username
+-> id --> userID or groupID
+-> uname --> operating system name
+-> ps --> running process and their ids
+-> top --> running process resource usage
+-> df --> mounted file system
+-> man --> reference manual
+-> date --> today's date 
+	-> date "+%H"
+
+## working with files
+-> cp --> copy file
+	cp oldfile newfile
+-> mv --> change filename or path
+-> rm --> remove file (use -i to get confirmation)
+-> touch --> create empty file/update file timestamp
+-> chmod --> change/modify file permissions
+	chmod command lets you change the permissions set for a file.
+	
+	Option			Description.
+	r, w and x	representing read, write and execute
+				permissions respectively
+	u,g and o	representing user categories owner, 
+				group and others respectively
+	+, -		representing grant and revoke 
+				operations respectively
+	To remove the read permission for 'others' category.
+	-> chmod o-r usdoi.txt
+-> wc --> get count of lines, words, characters in file
+	-> wc usdoi.txt
+	The output contains the number of lines followed by number of words followed by number of characters in the file.
+	Print only the number of words in 'usdoi.txt'.
+	-> wc -w usdoi.txt
+	Print only the number of characters in 'usdoi.txt'.
+	-> wc -c usdoi.txt
+-> grep --> return lines in file matching pattern
+	The following command prints all lines in the file usdoi.txt which contain the word people.
+	-> grep people usdoi.txt
+	
+	Option		Description.
+	-n		Along with the matching lines, print the 
+			line numbers also
+	-c		Get the count of matching lines
+	-i		Ignore the case of the text while matching
+	-v		Print all lines which do not contain the 
+			pattern
+	-w		Match only if the pattern matches whole 
+			words
+	
+	Prints all lines from the /etc/passwd file, which do not contain the pattern login.
+	-> grep -v login /etc/passwd
+
+## navigating $ working with directories
+-> ls --> list files and directories
+
+	Option		Description
+	-a		list all the files including hidden files
+	-d		list directories themselves, not their 
+			contents
+	-h		with -l and -s, print sizes like 1K, 
+			234M, 2G etc
+	-l		long listing of files which include 
+			information about permission, owner, size etc
+	-F		classify files by appending type 	
+			indcator like *,/ etc. to file names
+	-r		reverse order while sorting
+	-S		sort by file size, largest first
+	-t		sort by time, newest first
+
+-> find --> find files in directory tree
+-> pwd --> prints current working directory
+-> mkdir --> make directory
+-> cd --> chnage directory
+-> rmdir --> remove directory
+
+## printing file and string contents
+-> cat --> print file contents
+-> more --> print file contents page by page
+-> head --> print first n lines of the file
+-> tail	--> print last n lines of the file
+-> echo --> print string or variable value (-e for special characters)
+
+## compression and archiving
+-> tar --> archive a set of file
+-> zip -->  compress a set of file
+	(-> zip config.zip /etc/*.conf)
+		 filename   location
+	-r to zip entire folder
+	-> zip -r bin.zip /bin
+-> unzip --> extract files from a compressed zip 
+	The following command lists the files of the archive called 'config.zip'
+	-> unzip -l config.zip
+	The following command extracts all the files in the archive bin.zip.
+-> archive
+
+## Networking
+-> hostname --> print hostname
+	You can use the -i option to view the IP adrress of the host:
+	-> hostname -i
+-> ping --> send packet to URL and print response
+	If you want to ping only for a limited number of times, use -c option.
+	ping -c 5 www.google.com
+-> ifconfig --> system network configurations
+	eth0 is usually the primary network interface that connects your server to the network.
+	-> ifconfig eth0
+	You can see your server's ip address in the line number 2 after the word inet.
+	
+-> curl --> display contents of file or url
+-> wget --> download file from url

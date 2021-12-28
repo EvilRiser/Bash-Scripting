@@ -1,0 +1,31 @@
+## Filter, Pipes and variables
+
+Filters are shell command which:
+	-->take input from standard input
+	-->send output to standard output
+	-->transform input data into output data
+	Eg: wc, cat, more, head, sort
+	-->Filters can be chained together
+	
+	Pipe command - "|"
+	--> For chaining commands
+	-> command1 | command2
+	output of command1 is input of command2
+	-->pipe stands for pipeline
+	-> ls | sort -r
+	
+	set - list all shell variables
+	-> set | head -4
+	Defining shell variables
+	-> varname=value (no space around =)
+	-> Greetings="Hello"
+	-> echo $Greetings   ## Hello
+	
+	To delete a variable use unset
+	-> unset Greetings   ##deletes variable
+	
+extend scope of env variable
+-> export Greetings
+
+env list all environmnet variable
+-> env | grep "Gree"

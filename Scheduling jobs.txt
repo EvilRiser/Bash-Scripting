@@ -1,0 +1,30 @@
+#Scheduling jobs
+Cron is a service that runs job
+Crond interprets 'crontab files' and submits job to cron 
+A crontab is a table of jobs and schedule data
+Crontab command invokes text editor to edit a crontab file
+
+-> crontab -e # opens default editor
+
+Job syntax
+	m h dom mon dow command
+	m -> minute
+	h -> hour
+	dom -> day of month
+	mon -> month
+	dow -> day of week
+	-> 30 15 * * 0 date >> sundays.txt
+	append the date every sunday in sundays.txt at 15.30 
+	
+	
+	minute (0-59)
+	hour(0-23, 0 = midnight)
+	day (1-31)
+	month (1-12)
+	weekday (0-6, 0 = Sunday)
+
+	
+	
+ctrl X to close and Y to save 
+crontab -l | tail -6
+--> -l displays all job -e goes to editor -r to remove all cron jobs

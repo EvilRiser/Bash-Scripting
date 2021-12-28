@@ -1,0 +1,55 @@
+script is a list of commands interpreted by a script language
+commands that can be entered interactively or listed in a text file
+scripting langauge are interpreted at runtime
+slower to run but fast to develop
+
+shell script --> it is a executable text file with an interpreter directive
+#!interpreter [optional-arg]
+'interpreter' --> path to an executable program
+'optional-arg' --> single argument string
+
+$$shell directive
+pound bang slash bin slash shell
+#!/bin/sh
+#!/bin/bash
+
+$$ python script directive
+
+#!/usr/bin/env python3
+
+$$ example shell script
+create the shell script
+	-> touch hello_world.sh
+	-> echo '#!/bin/bash' >> hello_world.sh
+	-> echo 'hello world' >> hello_world.sh
+to run your bash script you have to make it executable
+check the options
+-> ls -l hello_world.sh
+-> chmod +x hello_world.sh
+run your bash script
+-> ./hello_world.sh
+
+It begins with a 'shebang' script directive
+It is used to run commands and programs
+scripting language are interpreted not compiled
+
+greet.sh
+	echo -n "Enter firstname:"
+	read fname
+	echo -n "enter lastname:"
+	read lname
+	echo "hello $fname $lname"
+->bash greet.sh
+
+greetnew.sh
+	#! /bin/bash
+	echo -n "Enter firstname:"
+	read fname
+	echo -n "enter lastname:"
+	read lname
+	echo "hello $fname $lname"
+
+makeit executable
+chmod u+x greetnew.sh
+-> ./greetnew.sh
+
